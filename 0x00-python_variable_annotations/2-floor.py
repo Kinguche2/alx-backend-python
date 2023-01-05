@@ -9,4 +9,4 @@ def floor(n: float) -> int:
     """
     Returns the floor of the argument n
     """
-    return (n // 1)
+    return int(n // 1)
