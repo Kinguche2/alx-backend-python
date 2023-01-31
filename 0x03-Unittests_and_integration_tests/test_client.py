@@ -44,7 +44,7 @@ class TestGithubOrgClient(unittest.TestCase):
                           "_public_repos_url",
                           new_callable=PropertyMock,
                           return_value="https://api.github.com/") as mock_pub:
-            test_client = GithubOrgClient("hoberton")
+            test_client = GithubOrgClient("holberton")
             test_return = test_client.public_repos()
             self.assertEqual(test_return, ["holberton"])
             mock_get.assert_called_once
@@ -52,8 +52,8 @@ class TestGithubOrgClient(unittest.TestCase):
 
     """ inputs to test the functionality """
     @parameterized.expand([
-        (repo={"license": {"key": "my_license"}}, "my_license", True),
-        (repo={"license": {"key": "other_license"}}, "my_license", False),
+        ({"license": {"key": "my_license"}}, "my_license", True),
+        ({"license": {"key": "other_license"}}, "my_license", False),
         ])
     def test_has_license(self, repo, license_key, expected_return):
         """ to unit-test GithubOrgClient.has_license """
