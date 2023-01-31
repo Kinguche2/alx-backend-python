@@ -52,8 +52,8 @@ class TestGithubOrgClient(unittest.TestCase):
 
     """ inputs to test the functionality """
     @parameterized.expand([
-        ({"license": {"key": "my_license"}}, "my_license", True),
-        ({"license": {"key": "other_license"}}, "my_license", False),
+        (repo={"license": {"key": "my_license"}}, "my_license", True),
+        (repo={"license": {"key": "other_license"}}, "my_license", False),
         ])
     def test_has_license(self, repo, license_key, expected_return):
         """ to unit-test GithubOrgClient.has_license """
