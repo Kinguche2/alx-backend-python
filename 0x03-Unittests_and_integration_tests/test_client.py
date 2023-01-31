@@ -22,7 +22,7 @@ class TestGithubOrgClient(unittest.TestCase):
         test_client = GithubOrgClient(org_name)
         test_return = test_client.org
         self.assertEqual(test_return, mock_get.return_value)
-        mock_get.assert_called_once
+        mock_get.assert_called_once()
 
     def test_public_repos_url(self):
         """ to unit-test GithubOrgClient._public_repos_url """
@@ -47,8 +47,8 @@ class TestGithubOrgClient(unittest.TestCase):
             test_client = GithubOrgClient("holberton")
             test_return = test_client.public_repos()
             self.assertEqual(test_return, ["holberton"])
-            mock_get.assert_called_once
-            mock_pub.assert_called_once
+            mock_get.assert_called_once()
+            mock_pub.assert_called_once()
 
     """ inputs to test the functionality """
     @parameterized.expand([
